@@ -2,7 +2,7 @@ import pygame
 from const import *
 background_color = (128,128,128)
 lines_color=(255,255,255)
-lines_size = 10
+lines_size = 12
 def draw_car_park(screen):
     screen.fill(background_color) #Background
     pygame.draw.rect(screen,lines_color,pygame.Rect(0,0,screnn_size[0],lines_size)) #Top Line
