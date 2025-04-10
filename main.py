@@ -1,8 +1,9 @@
-import pygame,sys
+import pygame
 from const import *
 from event import set_events
 from car_park import draw_car_park
 from player import Player
+from car import Car
 
 class Game():
     def __init__(self):
@@ -11,6 +12,8 @@ class Game():
         self.clock=pygame.time.Clock()
         self.delta=1
         self.player=Player(screnn_size[0]/2-32/2,80,24,24)
+        Car.load()
+        Car.render_car_park_cars()
         #Load Images 
         self.textures={}
         self.textures["player"] = pygame.image.load("img/Player/Player.png").convert_alpha()

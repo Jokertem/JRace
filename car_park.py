@@ -1,4 +1,5 @@
 import pygame
+from car import *
 from const import *
 background_color = (128,128,128)
 lines_color=(255,255,255)
@@ -9,5 +10,10 @@ def draw_car_park(screen):
     pygame.draw.rect(screen,lines_color,pygame.Rect(0,screnn_size[1]-lines_size,screnn_size[0],lines_size)) #Bottom Line
     pygame.draw.rect(screen,lines_color,pygame.Rect(0,0,lines_size,screnn_size[1])) #Left Line
     pygame.draw.rect(screen,lines_color,pygame.Rect(screnn_size[0]-lines_size,0,lines_size,screnn_size[1])) #Right Line
+    
+    #Draw Cars
+    for car in Car.parked_cars:
+        screen.blit(car.texture,(car.x,car.y))
+        
 
     
