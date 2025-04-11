@@ -1,7 +1,7 @@
 import pygame,os
 from const import *
 from random import randrange
-class CarType:
+class CarType(pygame.Rect):
      def __init__(self,name,w,h,texture,speed,acceleration,brakes):
           self.w=w
           self.h=h

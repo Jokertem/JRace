@@ -4,6 +4,7 @@ from event import set_events
 from car_park import draw_car_park
 from player import Player
 from car import Car
+from interface import *
 
 class Game():
     def __init__(self):
@@ -24,11 +25,12 @@ class Game():
             self.delta=self.clock.tick(frame_rate) * frame_rate/1000
             pygame.display.update()
             set_events(self.player)
-            if self.player.place =="car_park":
+            if self.player.place =="car_park" :
                 draw_car_park(self.screen)
-                self.player.animation(self.screen,self.textures["player"])
-                self.player.colisons()
+                if not self.player.car:
+                    self.player.animation(self.screen,self.textures["player"])
+                    self.player.colisons()
+            show_car_name(self.screen,self.player)
             
             
-
 Game()        
